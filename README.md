@@ -1,5 +1,9 @@
 == README
 
+# Projects For Asia Charitable Foundation
+
+This is PFA's Rails site developed by Michael Longerich.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
