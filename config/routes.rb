@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
+  get 'static_pages/about'
+  get 'static_pages/donate'
+  get 'static_pages/hopehouse'
+  get 'static_pages/hopeandafuture'
+  get 'static_pages/nextsteps'
+  get 'static_pages/sponsorship'
+  get 'static_pages/hopeofglory'
+  get 'static_pages/sunshine'
+  get 'static_pages/specialprojects'
+  get 'static_pages/blog'
+  get 'static_pages/contact'
 
   # resources :static_pages
   # The priority is based upon order of creation: first created -> highest priority.
