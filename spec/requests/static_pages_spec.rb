@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "StaticPages", type: :request do
 
+  let(:base_title) { "Projects For Asia Charitable Foundation, Inc."}
+
   describe "Home page" do
     it 'should have the content "Projects For Asia"' do
       visit '/static_pages/home'
@@ -9,7 +11,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/home'
-      expect(page).to have_title("Projects For Asia")
+      expect(page).to have_title("#{base_title}")
     end
   end
 
@@ -20,7 +22,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/about'
-      expect(page).to have_title("About | Projects For Asia")
+      expect(page).to have_title("About | #{base_title}")
     end
   end
 
@@ -31,7 +33,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/donate'
-      expect(page).to have_title("Donate | Projects For Asia")
+      expect(page).to have_title("Donate | #{base_title}")
     end
   end
 
@@ -42,7 +44,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/hopehouse'
-      expect(page).to have_title("Hope House Children's Home | Projects For Asia")
+      expect(page).to have_title("Hope House Children's Home | #{base_title}")
     end
   end
 
@@ -53,7 +55,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/hopeandafuture'
-      expect(page).to have_title("Hope and a Future | Projects For Asia")
+      expect(page).to have_title("Hope and a Future | #{base_title}")
     end
   end
 
@@ -64,7 +66,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/nextsteps'
-      expect(page).to have_title("Next Steps | Projects For Asia")
+      expect(page).to have_title("Next Steps | #{base_title}")
     end
   end
 
@@ -75,7 +77,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/sponsorship'
-      expect(page).to have_title("Sponsorship | Projects For Asia")
+      expect(page).to have_title("Sponsorship | #{base_title}")
     end
   end
 
@@ -86,7 +88,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/hopeofglory'
-      expect(page).to have_title("Hope of Glory Children's Home | Projects For Asia")
+      expect(page).to have_title("Hope of Glory Children's Home | #{base_title}")
     end
   end
 
@@ -97,7 +99,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/sunshine'
-      expect(page).to have_title("Sunshine School | Projects For Asia")
+      expect(page).to have_title("Sunshine School | #{base_title}")
     end
   end
 
@@ -108,7 +110,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/specialprojects'
-      expect(page).to have_title("Special Projects | Projects For Asia")
+      expect(page).to have_title("Special Projects | #{base_title}")
     end
   end
 
@@ -119,7 +121,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/blog'
-      expect(page).to have_title("Blog | Projects For Asia")
+      expect(page).to have_title("Blog | #{base_title}")
     end
   end
 
@@ -130,7 +132,7 @@ RSpec.describe "StaticPages", type: :request do
     end
     it 'should have the right title' do
       visit '/static_pages/contact'
-      expect(page).to have_title("Contact | Projects For Asia")
+      expect(page).to have_title("Contact | #{base_title}")
     end
   end
 
