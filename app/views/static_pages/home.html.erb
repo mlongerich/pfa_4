@@ -1,2 +1,74 @@
-<h1>Projects For Asia Charitable Foundation, Inc.</h1>
-<p>This is the Home page for PFA</p>
+<%= render 'static_pages/carousel' %>
+       <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to Projects For Asia
+                </h1>
+            </div>
+            <div class="col-lg-12">
+              <p>Projects For Asia Charitable Foundation, Inc. is <%= Date.today.year - 1998 %> years old and is currently serving in two countries in Asia with its headquarters located in Chiang Mai, Thailand.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Thailand</h4>
+                    </div>
+                    <div class="panel-body">
+                   		<a href="portfolio-item.html">
+                        <%= image_tag("home/thailand.jpg", class: "img img-responsive") %>
+              		  	</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-gift"></i> India</h4>
+                    </div>
+                    <div class="panel-body">
+                   		<a href="portfolio-item.html">
+                        <%= image_tag("home/india.jpg", class: "img img-responsive") %>
+              		  	</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i>Ways to Give</h4>
+                    </div>
+                    <div class="panel-body">
+                   		<a href="portfolio-item.html">
+                        <%= image_tag("home/give.jpg", class: "img img-responsive") %>
+              		  	</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="well">
+          <div class="row text-center">
+            <div class="col-md-6">
+              <p> 
+                Projects For Asia Charitable Foundation, Inc. <br />
+                611 Main St. <br />
+                Norwell, MA 02061
+              </p>
+              <p>pfasia98@aol.com</p>
+            </div>  
+            <div class="col-md-6">
+              <div class="btn-group">
+                <a class="btn btn-default" href="#"><%= fa_icon "facebook-square", class: "fa-2x" %></a>
+                <a class="btn btn-default" href="#"><%= fa_icon "twitter-square", class: "fa-2x" %></a>
+                <a class="btn btn-default" href="#"><%= fa_icon "envelope-square", class: "fa-2x" %></a>
+              </div>
+            </div>
+          </div>
+        </div>

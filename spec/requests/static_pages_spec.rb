@@ -3,137 +3,95 @@ require 'rails_helper'
 RSpec.describe "StaticPages", type: :request do
 
   let(:base_title) { "Projects For Asia Charitable Foundation, Inc."}
+  subject { page }
 
   describe "Home page" do
-    it 'should have the content "Projects For Asia"' do
-      visit '/static_pages/home'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/home'
-      expect(page).to have_title("#{base_title}")
-    end
-  end
-
-  describe "About page" do
-    it 'should have the content "About"' do
-      visit '/static_pages/about'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/about'
-      expect(page).to have_title("About | #{base_title}")
-    end
+    before { visit root_path }
+    it { should have_content("Projects For Asia") }
+    it { should have_title("#{base_title}") }
   end
 
   describe "Donate page" do
-    it 'should have the content "Donate"' do
-      visit '/static_pages/donate'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/donate'
-      expect(page).to have_title("Donate | #{base_title}")
-    end
+    before { visit donate_path }
+    it { should have_content "Donate" }
+    it { should have_title("Donate | #{base_title}") }
   end
 
   describe "Hope House page" do
-    it 'should have the content "Hope House Children"' do
-      visit '/static_pages/hopehouse'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/hopehouse'
-      expect(page).to have_title("Hope House Children's Home | #{base_title}")
-    end
+    before { visit hopehouse_path }
+    it { should have_content "Hope House Children" }
+    it { should have_title("Hope House Children's Home | #{base_title}") }
   end
 
   describe "Hope and a Future page" do
-    it 'should have the content "Hope and a Future"' do
-      visit '/static_pages/hopeandafuture'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/hopeandafuture'
-      expect(page).to have_title("Hope and a Future | #{base_title}")
-    end
+    before { visit hopeandafuture_path }
+    it { should have_content "Hope and a Future" }
+    it { should have_title("Hope and a Future | #{base_title}") }
   end
 
   describe "Next Steps page" do
-    it 'should have the content "Next Steps"' do
-      visit '/static_pages/nextsteps'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/nextsteps'
-      expect(page).to have_title("Next Steps | #{base_title}")
-    end
+    before { visit nextsteps_path }
+    it { should have_content "Next Steps" }
+    it { should have_title("Next Steps | #{base_title}") }
   end
 
   describe "Sponsorship page" do
-    it 'should have the content "Sponsorship"' do
-      visit '/static_pages/sponsorship'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/sponsorship'
-      expect(page).to have_title("Sponsorship | #{base_title}")
-    end
+    before { visit sponsorship_path }
+    it { should have_content "Sponsorship" }
+    it { should have_title("Sponsorship | #{base_title}") }
   end
 
   describe "Hope of Glory page" do
-    it 'should have the content "Hope of Glory"' do
-      visit '/static_pages/hopeofglory'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/hopeofglory'
-      expect(page).to have_title("Hope of Glory Children's Home | #{base_title}")
-    end
+    before { visit hopeofglory_path }
+    it { should have_content "Hope of Glory" }
+    it { should have_title("Hope of Glory Children's Home | #{base_title}") }
   end
 
   describe "Sunshine page" do
-    it 'should have the content "Sunshine"' do
-      visit '/static_pages/sunshine'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/sunshine'
-      expect(page).to have_title("Sunshine School | #{base_title}")
-    end
+    before { visit sunshine_path }
+    it { should have_content "Sunshine" }
+    it { should have_title("Sunshine School | #{base_title}") }
   end
 
   describe "Special Projects page" do
-    it 'should have the content "Special Projects"' do
-      visit '/static_pages/specialprojects'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/specialprojects'
-      expect(page).to have_title("Special Projects | #{base_title}")
-    end
+    before { visit specialprojects_path }
+    it { should have_content "Special Projects" }
+    it { should have_title("Special Projects | #{base_title}") }
   end
 
   describe "Blog page" do
-    it 'should have the content "Blog"' do
-      visit '/static_pages/blog'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/blog'
-      expect(page).to have_title("Blog | #{base_title}")
-    end
+    before { visit blog_path }
+    it { should have_content "Blog" }
+    it { should have_title("Blog | #{base_title}") }
   end
 
   describe "Contact page" do
-    it 'should have the content "Contact"' do
-      visit '/static_pages/contact'
-      expect(page).to have_content("Projects For Asia")
-    end
-    it 'should have the right title' do
-      visit '/static_pages/contact'
-      expect(page).to have_title("Contact | #{base_title}")
-    end
+    before { visit contact_path }
+    it { should have_content "Contact" }
+    it { should have_title("Contact | #{base_title}") }
   end
 
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "Donate"
+    expect(page).to have_title("Donate | #{base_title}")
+    click_link "Hope House Children's Home"
+    expect(page).to have_title("Hope House Children's Home | #{base_title}")
+    click_link "Hope and a Future Learning Center"
+    expect(page).to have_title("Hope and a Future | #{base_title}")
+    click_link "Next Steps"
+    expect(page).to have_title("Next Steps | #{base_title}")
+    click_link "Sponsorship"
+    expect(page).to have_title("Sponsorship | #{base_title}")
+    click_link "Hope of Glory Children's Home"
+    expect(page).to have_title("Hope of Glory Children's Home | #{base_title}")
+    click_link "Sunshine School"
+    expect(page).to have_title("Sunshine School | #{base_title}")
+    click_link "Special Projects"
+    expect(page).to have_title("Special Projects | #{base_title}")
+    click_link "Blog"
+    expect(page).to have_title("Blog | #{base_title}")
+    click_link "Contact"
+    expect(page).to have_title("Contact | #{base_title}")
+  end
 end
