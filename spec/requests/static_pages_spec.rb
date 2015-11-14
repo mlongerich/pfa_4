@@ -17,24 +17,6 @@ RSpec.describe "StaticPages", type: :request do
     it { should have_title("Donate | #{base_title}") }
   end
 
-  describe "Hope House page" do
-    before { visit hopehouse_path }
-    it { should have_content "Hope House Children" }
-    it { should have_title("Hope House Children's Home | #{base_title}") }
-  end
-
-  describe "Hope and a Future page" do
-    before { visit hopeandafuture_path }
-    it { should have_content "Hope and a Future" }
-    it { should have_title("Hope and a Future | #{base_title}") }
-  end
-
-  describe "Next Steps page" do
-    before { visit nextsteps_path }
-    it { should have_content "Next Steps" }
-    it { should have_title("Next Steps | #{base_title}") }
-  end
-
   describe "Sponsorship page" do
     before { visit sponsorship_path }
     it { should have_content "Sponsorship" }
@@ -75,12 +57,8 @@ RSpec.describe "StaticPages", type: :request do
     visit root_path
     click_link "Donate"
     expect(page).to have_title("Donate | #{base_title}")
-    click_link "Hope House Children's Home"
-    expect(page).to have_title("Hope House Children's Home | #{base_title}")
-    click_link "Hope and a Future Learning Center"
-    expect(page).to have_title("Hope and a Future | #{base_title}")
-    click_link "Next Steps"
-    expect(page).to have_title("Next Steps | #{base_title}")
+    all('a', :text => 'Thailand')[1].click
+    expect(page).to have_title("Thailand | #{base_title}")
     click_link "Sponsorship"
     expect(page).to have_title("Sponsorship | #{base_title}")
     click_link "Hope of Glory Children's Home"

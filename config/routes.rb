@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
   match '/donate', to: 'static_pages#donate', via: 'get'
-  match '/hopehouse', to: 'static_pages#hopehouse', via: 'get'
-  match '/hopeandafuture', to: 'static_pages#hopeandafuture', via: 'get'
-  match '/nextsteps', to: 'static_pages#nextsteps', via: 'get'
+#  match '/hopehouse', to: 'static_pages#hopehouse', via: 'get'
+  match '/thailand', to: 'static_pages#thailand', via: 'get'
+#  match '/hopeandafuture', to: 'static_pages#hopeandafuture', via: 'get'
+#  match '/nextsteps', to: 'static_pages#nextsteps', via: 'get'
   match '/sponsorship', to: 'static_pages#sponsorship', via: 'get'
   match '/hopeofglory', to: 'static_pages#hopeofglory', via: 'get'
   match '/sunshine', to: 'static_pages#sunshine', via: 'get'

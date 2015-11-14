@@ -8,13 +8,7 @@ class StaticPagesController < ApplicationController
   def donate
   end
 
-  def hopehouse
-  end
-
-  def hopeandafuture
-  end
-
-  def nextsteps
+  def thailand
   end
 
   def sponsorship
