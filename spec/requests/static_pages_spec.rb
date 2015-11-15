@@ -45,10 +45,8 @@ RSpec.describe "StaticPages", type: :request do
     visit root_path
     click_link "Donate"
     expect(page).to have_title("Donate | #{base_title}")
-    all('a', :text => 'Thailand')[1].click
+    click_link "Thailand"
     expect(page).to have_title("Thailand | #{base_title}")
-    click_link "Sponsorship"
-    expect(page).to have_title("Sponsorship | #{base_title}")
     click_link "India"
     expect(page).to have_title("India | #{base_title}")
     click_link "Blog"
