@@ -14,6 +14,9 @@ class StaticPagesController < ApplicationController
   def sponsorship
   end
 
+  def india
+  end
+
   def hopeofglory
   end
 

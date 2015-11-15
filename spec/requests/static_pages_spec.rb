@@ -23,22 +23,10 @@ RSpec.describe "StaticPages", type: :request do
     it { should have_title("Sponsorship | #{base_title}") }
   end
 
-  describe "Hope of Glory page" do
-    before { visit hopeofglory_path }
-    it { should have_content "Hope of Glory" }
-    it { should have_title("Hope of Glory Children's Home | #{base_title}") }
-  end
-
-  describe "Sunshine page" do
-    before { visit sunshine_path }
-    it { should have_content "Sunshine" }
-    it { should have_title("Sunshine School | #{base_title}") }
-  end
-
-  describe "Special Projects page" do
-    before { visit specialprojects_path }
-    it { should have_content "Special Projects" }
-    it { should have_title("Special Projects | #{base_title}") }
+  describe "India" do
+    before { visit india_path }
+    it { should have_content "India" }
+    it { should have_title("India | #{base_title}") }
   end
 
   describe "Blog page" do
@@ -61,12 +49,8 @@ RSpec.describe "StaticPages", type: :request do
     expect(page).to have_title("Thailand | #{base_title}")
     click_link "Sponsorship"
     expect(page).to have_title("Sponsorship | #{base_title}")
-    click_link "Hope of Glory Children's Home"
-    expect(page).to have_title("Hope of Glory Children's Home | #{base_title}")
-    click_link "Sunshine School"
-    expect(page).to have_title("Sunshine School | #{base_title}")
-    click_link "Special Projects"
-    expect(page).to have_title("Special Projects | #{base_title}")
+    click_link "India"
+    expect(page).to have_title("India | #{base_title}")
     click_link "Blog"
     expect(page).to have_title("Blog | #{base_title}")
     click_link "Contact"
