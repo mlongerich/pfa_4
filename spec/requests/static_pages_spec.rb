@@ -5,6 +5,11 @@ RSpec.describe "StaticPages", type: :request do
   let(:base_title) { "Projects For Asia Charitable Foundation, Inc."}
   subject { page }
 
+  shared_examples_for "all static pages" do
+    it { should have_content(page_content) }
+    it { should have_title(page_title + ' | ' + base_title) }
+  end
+
   describe "Home page" do
     before { visit root_path }
     it { should have_content("Projects For Asia") }
@@ -13,32 +18,38 @@ RSpec.describe "StaticPages", type: :request do
 
   describe "Donate page" do
     before { visit donate_path }
-    it { should have_content "Donate" }
-    it { should have_title("Donate | #{base_title}") }
+    let(:page_content)  {'Donate'}
+    let(:page_title)    {'Donate'}
+    it_should_behave_like 'all static pages'
+
   end
 
   describe "Sponsorship page" do
     before { visit sponsorship_path }
-    it { should have_content "Sponsorship" }
-    it { should have_title("Sponsorship | #{base_title}") }
+    let(:page_content)  {'Sponsorship'}
+    let(:page_title)    {'Sponsorship'}
+    it_should_behave_like 'all static pages'
   end
 
   describe "India" do
     before { visit india_path }
-    it { should have_content "India" }
-    it { should have_title("India | #{base_title}") }
+    let(:page_content)  {'India'}
+    let(:page_title)    {'India'}
+    it_should_behave_like 'all static pages'
   end
 
   describe "Blog page" do
     before { visit blog_path }
-    it { should have_content "Blog" }
-    it { should have_title("Blog | #{base_title}") }
+    let(:page_content)  {'Blog'}
+    let(:page_title)    {'Blog'}
+    it_should_behave_like 'all static pages'
   end
 
   describe "Contact page" do
     before { visit contact_path }
-    it { should have_content "Contact" }
-    it { should have_title("Contact | #{base_title}") }
+    let(:page_content)  {'Contact'}
+    let(:page_title)    {'Contact'}
+    it_should_behave_like 'all static pages'
   end
 
   it "should have the right links on the layout" do
